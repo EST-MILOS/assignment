@@ -32,12 +32,15 @@ def run_calculator():
 def run_qa_bot():
     print("\nQuestion Answering Bot")
     question_count = 0
+    topics = "hello, python, jetson, ai, or name"
 
     while True:
         if question_count == 0:
-            question = input("Ask me something: ").strip().lower()
+            question = input(f"Ask me about {topics}: ").strip().lower()
         else:
-            question = input("Ask me something (type 'exit' to end): ").strip().lower()
+            question = input(
+                f"Ask me about {topics} (type 'exit' to end): "
+            ).strip().lower()
 
         if question_count > 0 and question == "exit":
             print(f"You asked {question_count} question(s). Goodbye!")
