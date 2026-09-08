@@ -62,10 +62,33 @@ def run_qa_bot():
             print("Bot: Sorry, I don't understand.")
 
 
+# Task C: Turtle Drawing
+def run_turtle_drawing():
+    import turtle
+
+    screen = turtle.Screen()
+    screen.title("Colourful Star Spiral")
+    screen.bgcolor("#0F172A")
+
+    artist = turtle.Turtle()
+    artist.speed(0)
+    artist.width(2)
+    colours = ["#38BDF8", "#A78BFA", "#F472B6", "#FACC15", "#4ADE80"]
+
+    for step in range(120):
+        artist.pencolor(colours[step % len(colours)])
+        artist.forward(step * 3)
+        artist.right(59)
+
+    artist.hideturtle()
+    screen.exitonclick()
+
+
 while True:
     print("\nAssignment 1 Menu")
     print("1. Simple Calculator")
     print("2. Question Answering Bot")
+    print("3. Turtle Drawing")
     print("0. Exit Program")
     choice = input("Choose an option: ").strip()
 
@@ -73,8 +96,10 @@ while True:
         run_calculator()
     elif choice == "2":
         run_qa_bot()
+    elif choice == "3":
+        run_turtle_drawing()
     elif choice == "0":
         print("Goodbye!")
         break
     else:
-        print("Invalid choice. Please enter 1, 2, or 0.")
+        print("Invalid choice. Please enter 1, 2, 3, or 0.")
